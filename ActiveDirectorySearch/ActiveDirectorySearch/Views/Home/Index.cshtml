@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Active Directory Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ActiveDirectorySearch.Models.AdUserModel
+
+
+<div class="container align-content-center h-100">
+    <div class="row">
+        <h2>Hello @Model.DisplayName</h2>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="jumbotron">
+                <h3>Search by Login Id</h3>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Login Id" aria-label="Login Id" id="loginId" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="loginIdSearchBtn">Search</button>
+                    </div>
+                </div>
+                <div id="loginIdSearchResult">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="jumbotron">
+                <h3>Search by Email Id</h3>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Email Id" aria-label="Email Id" id="emailId" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="emailIdSearchBtn">Search</button>
+                    </div>
+                </div>
+                <div id="emailIdSearchResult">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+
+        $(document).ready(function () {
+            $('#loginIdSearchBtn').click(function (e) {
+                e.preventDefault();
+                let loginId = $('#loginId').val();
+                $.get("@Url.Action("GetUserByUserId","Home")?loginId=" + loginId)
+                    .done(function (result) {
+                        $("#loginIdSearchResult").empty();
+                        let resultString = "<label>Name: </label>" + result.DisplayName;
+                        $("#loginIdSearchResult").append(resultString);
+                    });
+            });
+
+            $('#emailIdSearchBtn').click(function (e) {
+                e.preventDefault();
+                let emailId = $('#emailId').val();
+                $.get("@Url.Action("GetUserByEmailId", "Home")?emailId=" + emailId)
+                    .done(function (result) {
+                        $("#emailIdSearchResult").empty();
+                        let resultString = "<label>Name: </label>" + result;
+                        $("#emailIdSearchResult").append(resultString);
+                    });
+            });
+        });
+    </script>
+}
