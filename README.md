@@ -1,1 +1,1 @@
-# FuzzyPrograms - Codes by manjuyrao
+# FuzzyPrograms - by manjuyrao
