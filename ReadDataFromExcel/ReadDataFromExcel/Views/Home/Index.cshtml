@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Read Excel Data";
+}
+
+<div class="container align-content-center h-100">
+    <form action="Home/UploadExcel" method="post" enctype="multipart/form-data">
+        <input type="file" name="excelFile" id="excelFile" />
+        <input type="submit" value="Upload" />
+    </form>
+</div>

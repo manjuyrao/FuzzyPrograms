@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html class="h-100">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Manjunatha Rao">
+    <title>Fuzzy Programs - @ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="h-100">
+    <div class="container-fluid body-content h-100">
+        <div class="row">
+            <div class="mx-auto">
+                <img src="~/Content/Images/arrow.gif" class="img-responsive" style="height:30px;display:inline-block;" /> <a target="_blank" class="blog-link" href="https://manjuyrao.blog">Go to blog</a>
+            </div>
+        </div>
+        <div class="navbar" role="navigation">
+            <div class="container-fluid" style="background-color:cadetblue">
+                <a class="navbar-brand" href="https://manjuyrao.blog" target="_blank">Read Excel Data</a>
+            </div>
+        </div>
+        @RenderBody()
+        <footer class="fixed-bottom">
+            <div class="row">
+                <p class="mx-auto">&copy; @DateTime.Now.Year - <a href="https://manjuyrao.blog" target="_blank">Fuzzy Programs</a></p>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

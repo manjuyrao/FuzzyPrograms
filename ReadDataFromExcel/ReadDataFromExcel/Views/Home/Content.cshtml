@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Content of excel";
+}
+@using System.Data
+
+@model DataTable
+
+<table>
+    <tbody>
+        @for (int i = 0; i < Model.Rows.Count; i++)
+        {
+            <tr>
+                @for (int j = 0; j < Model.Rows[i].ItemArray.Length; j++)
+                {
+                    <td>
+                        @Model.Rows[i][j]
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

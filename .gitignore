@@ -7,3 +7,7 @@
 /ActiveDirectorySearch/ActiveDirectorySearch/obj
 /ActiveDirectorySearch/ActiveDirectorySearch/ActiveDirectorySearch.csproj.user
 /ActiveDirectorySearch/packages
+/ReadDataFromExcel/.vs
+/ReadDataFromExcel/packages
+/ReadDataFromExcel/ReadDataFromExcel/bin
+/ReadDataFromExcel/ReadDataFromExcel/obj/Debug
